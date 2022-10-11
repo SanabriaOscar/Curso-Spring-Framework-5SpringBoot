@@ -1,0 +1,58 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>datos de la persona</title>
+
+    <link th:rel="stylesheet" th:href="@{webjars/bootstrap/4.0.0-2/css/bootstrap.min.css} "/>
+</head>
+<body>
+
+<h1>Ingresar nueva persona</h1>
+<a th:href="@{/}">Regresar</a>
+
+<div class="container">
+    <form th:action="@{/guardar}" th:object="${persona}" method="post">
+        <input type="hidden" name="idPersona" th:field="*{idPersona}" />
+        <fieldset>
+            <legend>Datos del usuario</legend>
+            <table>
+
+                <tr>
+                    <td><label th:text="#{persona.nombre}">Nombre: </label></td>
+                    <td><input type="text" th:field="*{nombre}" /></td>
+                </tr>
+                <tr>
+                    <td><label th:text="#{persona.apellido}">Apellido: </label></td>
+                    <td><input type="text" th:field="*{apellido}" /></td>
+                </tr>
+                <tr>
+                    <td><label th:text="#{persona.email}">Correo: </label></td>
+                    <td><input type="email" th:field="*{email}" /></td>
+                </tr>
+                <tr>
+                    <td><label th:text="#{persona.telefono}">Telefono: </label></td>
+                    <td><input type="text" th:field="*{telefono}" /></td>
+                </tr>
+
+                    <td>
+                        <button type="submit">Guardar...</button>
+                    </td>
+                </tr>
+            </table>
+        </fieldset>
+    </form>
+</div>
+
+
+<script th:src="@{/webjars/jquery/jquery.min.js}"></script>
+<script th:src="@{/webjars/popper.js/umd/popper.min.js}"></script>
+<script th:src="@{/webjars/bootstrap/js/bootstrap.min.js}"></script>
+
+<script>
+
+
+</script>
+
+</body>
+</html>
