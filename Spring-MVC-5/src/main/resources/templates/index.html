@@ -1,0 +1,61 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Spring Boot Thymeleaf Application - Bootstrap Table</title>
+
+    <link th:rel="stylesheet" th:href="@{webjars/bootstrap/4.0.0-2/css/bootstrap.min.css} "/>
+</head>
+<body><a th:href="@{agregar}">Agregar persona</a>
+<p th:text="${titulo}"></p>
+<!--<div class="container">
+    <div class="row">
+        <div>
+            <div th:if="${personas!=null}">
+                <table id="example" class="table table-bordered" style="width: 50%">
+                    <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Position</th>
+                        <th>Office</th>
+                        <th>Start date</th>
+                        <th>Editar</th>
+                        <th>Eliminar</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+
+                    <tr th:each="persona : ${personas}">
+                        <td th:text="${persona.nombre}">Name</td>
+                        <td th:text="${persona.apellido}">Position</td>
+                        <td th:text="${persona.email}">Office</td>
+                        <td th:text="${persona.telefono}">Start date</td>
+                        <td><a th:href="@{/editar/}+${persona.idPersona}" th:text="Editar"></a></td>
+                        <td><a th:href="@{/eliminar/}+${persona.idPersona}" th:text="Eliminar"></a></td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>-->
+        <!--    <div  th:if="${personas==null}">
+                La lista está vacía
+            </div>-->
+<!--<span th:text="${usuario.nombre}"></span><br>-->
+<span th:if="${usuario.email}" th:text="${usuario.email}"></span>
+<span th:if="${usuario.email==null}" th:text="'El usuario no tiene correo'"></span>
+
+<div th:if="${usuarios.size()==0}">No hay usuarios</div>
+    </div>
+</div>
+
+
+<script th:src="@{/webjars/jquery/jquery.min.js}"></script>
+<script th:src="@{/webjars/popper.js/umd/popper.min.js}"></script>
+<script th:src="@{/webjars/bootstrap/js/bootstrap.min.js}"></script>
+
+<script>
+
+
+</script>
+
+</body>
+</html>
